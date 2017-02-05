@@ -7,7 +7,7 @@ Gem::Specification.new do |spec|
   spec.version       = "3.0.0"
   spec.authors       = ["nysol"]
   spec.email         = ["info@nysol.jp"]
-
+  spec.platform      = Gem::Platform.local
   spec.summary       = %q{Tools for nysol ruby tools}
   spec.description   = %q{refer : http://www.nysol.jp/}
   spec.homepage      = "http://www.nysol.jp/"
