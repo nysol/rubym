@@ -1,13 +1,13 @@
 require "rubygems"
 require "mkmf"
 
-cp="../../.."
-libMver="2"
-modMver="2"
+unless have_library("kgmod3")
+  puts("need libkgmod.")
+  puts("refer https://github.com/nysol/mcmd")
+  exit 1
+end
 
-#$CPPFLAGS += " -Wall "
-$LOCAL_LIBS += " -lstdc++ -lmcmd3 -lkgmod3"
-#$LOCAL_LIBS += " -lboost_regex -lboost_system -lboost_filesystem -lboost_thread"
+$LOCAL_LIBS += "-lkgmod3"
 
 create_makefile("mcsvin")
 
