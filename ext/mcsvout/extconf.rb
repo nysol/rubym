@@ -10,5 +10,5 @@ unless have_library("kgmod3")
 end
 
 $LOCAL_LIBS += "-lkgmod3"
-create_makefile("mcsvout")
+create_makefile("nysol/mcsvout")
 

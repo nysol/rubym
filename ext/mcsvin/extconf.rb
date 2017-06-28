@@ -8,8 +8,7 @@ unless have_library("kgmod3")
 end
 
 $LOCAL_LIBS += "-lkgmod3"
-
-create_makefile("mcsvin")
+create_makefile("nysol/mcsvin")
 
 
 

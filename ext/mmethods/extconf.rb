@@ -8,5 +8,5 @@ unless have_library("kgmod3")
 end
 
 $LOCAL_LIBS += "-lkgmod3"
-create_makefile("mmethods")
+create_makefile("nysol/mmethods")
 

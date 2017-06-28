@@ -4,10 +4,9 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 
 Gem::Specification.new do |spec|
   spec.name          = "nysol"
-  spec.version       = "3.0.0"
+  spec.version       = "3.0.1"
   spec.authors       = ["nysol"]
   spec.email         = ["info@nysol.jp"]
-  spec.platform      = Gem::Platform.local
   spec.summary       = %q{Tools for nysol ruby tools}
   spec.description   = %q{refer : http://www.nysol.jp/}
   spec.homepage      = "http://www.nysol.jp/"
@@ -16,11 +15,21 @@ Gem::Specification.new do |spec|
 	spec.platform = Gem::Platform::RUBY 
   spec.files         = Dir.glob([
 		"lib/nysol/*.rb",
-		"lib/nysol/mcsvin.*",
-		"lib/nysol/mcsvout.*",
-		"lib/nysol/mmethods.*",
-		"lib/nysol/mtable.*",
+		"ext/mcsvin/*.rb",
+		"ext/mcsvout/*.rb",
+		"ext/mmethods/*.rb",
+		"ext/mtable/*.rb",
+		"ext/mcsvin/*.cpp",
+		"ext/mcsvout/*.cpp",
+		"ext/mmethods/*.cpp",
+		"ext/mtable/*.cpp",
 		"bin/*.rb" ])
+	spec.extensions=[
+		"ext/mcsvin/extconf.rb",
+		"ext/mcsvout/extconf.rb",
+		"ext/mmethods/extconf.rb",
+		"ext/mtable/extconf.rb",
+	]
   spec.bindir        = "bin"
   spec.executables   = [
 		"meach.rb",
@@ -30,8 +39,5 @@ Gem::Specification.new do |spec|
 		"msend.rb"
  ]
   spec.require_paths = ["lib"]
-  spec.add_development_dependency "bundler", "~> 1.11"
-  spec.add_development_dependency "rake", "~> 10.0"
-  spec.add_development_dependency "rspec", "~> 3.0"
 	spec.add_development_dependency 'rake-compiler'
 end
